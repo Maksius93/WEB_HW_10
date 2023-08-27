@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'quotes_app'
+    'quotes_app',
+    'users'
 ]
 
 MIDDLEWARE = [
