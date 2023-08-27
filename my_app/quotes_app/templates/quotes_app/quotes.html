@@ -1,0 +1,29 @@
+{% extends "quotes_app/base.html" %}
+
+{% block content %}
+
+<form method="POST" action="{% url 'noteapp:note' %}">
+    {% csrf_token %}
+    <div style="padding: 10px">
+        <label> Quote quote:
+            {{ form.quote }}
+        </label>
+        <span>{{ form.errors.quote }}</span>
+    </div>
+    <div style="padding: 10px">
+        <label> Quote tags:
+            {{ form.tags }}
+        </label>
+        <span>{{ form.errors.tags }}</span>
+    </div>
+    <div style="padding: 10px">
+        <label> Quote author:
+            <a href="{% url 'author' author.id %}">Go to author's page</a>
+        </label>
+    </div>
+    <div class="grid">
+        <button type="submit">Submit</button>
+        <button type="reset" class="secondary">Reset</button>
+    </div>
+</form>
+{% endblock %}
